@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className='w-76   border-r-3 border-r-bg-md  h-212 flex flex-col bg-bg-md/40'>
         {/* the header of sidebar like logo and name */}
-        <div className='w-full h-fit p-3  bg-bg-md/50  border-b-2/ border-b-bg-sm  flex items-center gap-3 justify-between'>
+        <div className='w-full h-fit p-2  bg-bg-md/50  border-b-2/ border-b-bg-sm  flex items-center gap-3 justify-between'>
           <div className='flex items-center gap-2'>
             <button className='btn-lg px-4 scale-80 py-3.5 btn-outline'>
               <Mastodon strokeWidth={2  }  className='text-inv size-8 '/>
@@ -76,8 +76,8 @@ const Sidebar = () => {
           <div className='flex items-center gap-2'>
             <div className='flex items-center justify-center size-11 rounded-full bg-bg-md'></div>
             <div className='flex flex-col'>
-              <span>McTomminay</span>
-              <p className=' truncate w-30 text-sm'>McTomminay123@gmail.com</p>
+              <span>Omar Hassan</span>
+              <p className=' truncate w-30 text-sm'>omar123@@gmail.com</p>
             </div>
           </div>
           <div className='flex flex-col'>
