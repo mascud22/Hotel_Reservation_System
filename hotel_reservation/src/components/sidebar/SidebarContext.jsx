@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { createContext, useContext, useState } from "react";
 
-const SidebarContext = () => {
+const SidebarContext = createContext();
+
+export const SidebarProvider = ({ children }) => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleSidebar = () => {
+    setCollapsed((prev) => !prev);
+  };
+
   return (
-    <div>
-        <h1>welcome to sidebar</h1>
-    </div>
-  )
-}
+    <SidebarContext.Provider value={{ collapsed, toggleSidebar }}>
+      {children}
+    </SidebarContext.Provider>
+  );
+};
 
-export default SidebarContext
+export const useSidebar = () => useContext(SidebarContext);
