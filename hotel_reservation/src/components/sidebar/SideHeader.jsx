@@ -16,7 +16,7 @@ const SideHeader = ({toggleSidebar, collapsed}) => {
       </div>
 
       <button className="px-2 border-0 btn-outline absolute -right-5 -top-">
-        <SidebarCollapse onClick={toggleSidebar} strokeWidth={1.5} className="icon-lg" />
+        <SidebarCollapse onClick={toggleSidebar} strokeWidth={1.2 } className="icon-lg" />
       </button>
     </div>
   );

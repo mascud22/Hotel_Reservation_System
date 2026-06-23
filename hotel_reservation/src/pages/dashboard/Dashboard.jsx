@@ -2,6 +2,7 @@ import React from 'react'
 import {formatDate } from '../../utils/dateHelpers/formatDate'
 import { calculateNights } from '../../utils/dateHelpers/calculateNight'
 import { getToday } from '../../utils/dateHelpers/getToday'
+import { DashboardDots } from 'iconoir-react'
 
 const Dashboard = () => {
   const newDate = new Date()
@@ -14,7 +15,7 @@ const Dashboard = () => {
   auto
   return (
     <div className='w-full h-full flex flex-col gap-3 p-5 '>
-      <h3>Dashboard</h3>
+      <h3> <DashboardDots className='icon'/> Dashboard</h3>
     </div>
   )
 }

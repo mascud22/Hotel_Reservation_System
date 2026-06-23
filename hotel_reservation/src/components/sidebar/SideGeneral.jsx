@@ -1,76 +1,113 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {
-  DashboardDots,
-  SafeOpen,
-  PeopleTag,
-  PageFlip,
-  CardReader,
-  Walking,
-  Lock,
-} from "iconoir-react";
+import { NavLink } from "react-router-dom";
+import { DashboardDots, SafeOpen, PeopleTag, PageFlip, CardReader, Walking,Lock} from "iconoir-react";
 
-const SideGeneral = ({collapsed}) => {
+const navigationItems = [
+  {
+    title: "Dashboard",
+    icon: DashboardDots,
+    path: "/",
+  },
+  {
+    title: "Rooms",
+    icon: SafeOpen,
+    path: "/rooms",
+  },
+  {
+    title: "Customers",
+    icon: PeopleTag,
+    path: "/customers",
+    count: 2
+  },
+  {
+    title: "Reservations",
+    icon: PageFlip,
+    path: "/reservations",
+    count: 6
+  },
+  {
+    title: "Payments",
+    icon: CardReader,
+    path: "/payments",
+  },
+];
+
+const toolItems = [
+  {
+    title: "Log Out",
+    icon: Walking,
+    path: "/logout",
+  },
+  {
+    title: "Change Password",
+    icon: Lock,
+    path: "/change-password",
+  },
+
+];
+
+const SideGeneral = ({ collapsed }) => {
   return (
-    <div className="w-full  h-fit flex flex-col gap-2 p-2">
+    <div className="flex h-fit w-full flex-col gap-2 p-2 mt-4 transition-all ease-in-out">
+      {/* Navigation Section */}
       {collapsed ? (
-        <div className=" w-full flex items-center justify-center">
-            <div className="size-2 rounded-full bg-txt-md"></div>
+        <div className="flex w-full justify-center">
+          <div className="size-1.5  rounded-full bg-txt-md/50"></div>
         </div>
-      ) : <p className="ml-4 font-medium">Navigations</p>
-      }
-      <div className="flex flex-col gap-1">
-        <button className="btn-outline border-none">
-          <DashboardDots className="icon text-txt" />
-          <span className="font-bold">Dashboard</span>
-          <div className="flex-1"></div>
-          <button className="btn-sm btn-icon btn-outline">58</button>
-        </button>
+      ) : (
+        <p className="ml-4 text-sm font-medium">Navigations</p>
+      )}
 
-        <Link className="block" to="/rooms">
-          <button className="btn-outline border-none w-full">
-            <SafeOpen className="icon text-txt-sm" />
-            <span className="text-txt-md">Rooms</span>
-            <div className="flex-1"></div>
-            <button className="btn-sm btn-icon btn-outline">4</button>
-          </button>
-        </Link>
-
-        <button className="btn-outline border-none">
-          <PeopleTag className="icon text-txt-sm" />
-          <span className="text-txt-md">Customers</span>
-          <div className="flex-1"></div>
-          <button className="btn-sm btn-icon btn-outline">2</button>
-        </button>
-
-        <Link className="block" to="/reservations">
-          <button className="btn-outline w-full border-none">
-            <PageFlip className="icon text-txt-sm" />
-            <span className="text-txt-md">Reservation</span>
-            <div className="flex-1"></div>
-            <button className="btn-sm btn-icon btn-outline">4</button>
-          </button>
-        </Link>
-
-        <button className="btn-outline border-none">
-          <CardReader className="icon text-txt-sm" />
-          <span className="text-txt-md">Payments</span>
-        </button>
+      {/* Navigation Items */}
+      <div className={`flex flex-col gap-3.5   ${!collapsed ? 'flex items-start' : 'items-center'}`}>
+        {navigationItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <NavLink key={item.title} to={item.path} className="block w-full">
+              {({ isActive }) => (
+                <button
+                  className={`btn-outline   active:scale-99  hover:scale-101  w-full border-none ${isActive ? "btn-outline active:scale-99  text-txt font-bold  " : "text-txt-sm"}`}>
+                  <Icon className={`icon  ${isActive ? 'text-txt' : 'text-txt-sm'}`} />
+                  {!collapsed && (
+                    <span className={`${isActive ? 'text-txt font-bold': 'text-txt-sm'}`}>{item.title}</span>
+                  )}
+                  <div className="flex-1"></div>
+                  <div>
+                    {item.count && (
+                      <button className="btn-sm  rounded-lg btn-outline"> {item.count} </button>
+                    )}
+                  </div>
+                </button>
+              )}
+            </NavLink>
+          );
+        })}
       </div>
 
-      <p className="my-2 ml-4 font-medium border-t-2 border-t-bg-md mt-3 pt-3">
-        Tools
-      </p>
+      {/* Tools Section */}
+      {!collapsed ? (<p className="mt-3 mb-2 ml-4 border-t-2 border-t-bg-md pt-3 text-sm font-medium">Tools</p>) : (
+        <div className="w-full border-b-2 border-b-bg-sm my-2"></div>
+      )}
 
-      <button className="btn-outline border-none">
-        <Walking className="icon text-txt-sm" />
-        <span className="text-txt-md">Log Out</span>
-      </button>
-
-      <button className="btn-outline border-none">
-        <Lock className="icon text-txt-sm" />
-        <span className="text-txt-md">Change Password</span>
-      </button>
+      {/* Tool Items */}
+      <div className={`flex flex-col gap-3.5   ${!collapsed ? 'flex items-start' : 'items-center'}`}>
+        {toolItems.map((item) => {
+          const Icon = item.icon;
+          return (
+            <NavLink key={item.title} to={item.path} className="block">
+              {({ isActive }) => (
+                <button
+                  className={`btn-outline group  w-full border-none ${isActive ? "bg-bg-md text-primary" : ""}`} >
+                  <Icon className="icon text-txt-sm" />
+                  {!collapsed && (
+                  <span className={`${isActive ? 'text-txt font-bold': 'text-txt-sm'}`}>{item.title}</span>
+                  )}
+                </button>
+              )}
+            </NavLink>
+          );
+        })}
+      </div>
     </div>
   );
 };

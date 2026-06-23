@@ -4,9 +4,9 @@ import Sidebar from '../components/sidebar/Sidebar'
 
 const PagesLayout = () => {
   return (
-    <div className="w-full overflow-hidden h-fit overscroll-y-none flex items-start bg-bg ">
+    <div className="w-full gap-2 overflow-hidden h-fit overscroll-y-none flex items-start bg-bg ">
         <Sidebar/>
-        <div className='w-full h-212  bg-bg-md/45'>
+        <div className='w-full h-212 mt-1  bg-bg-md/45'>
           <Outlet/>
         </div>
     </div>
