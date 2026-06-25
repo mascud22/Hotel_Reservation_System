@@ -52,7 +52,7 @@ const SideGeneral = ({ collapsed }) => {
       {/* Navigation Section */}
       {collapsed ? (
         <div className="flex w-full justify-center">
-          <div className="size-1.5  rounded-full bg-txt-md/50"></div>
+          <div className="size-1.5 mr-2  rounded-full bg-txt-md/50"></div>
         </div>
       ) : (
         <p className="ml-4 text-sm font-medium">Navigations</p>
@@ -66,14 +66,16 @@ const SideGeneral = ({ collapsed }) => {
             <NavLink key={item.title} to={item.path} className="block w-full">
               {({ isActive }) => (
                 <button
-                  className={`btn-outline   active:scale-99  hover:scale-101  w-full border-none ${isActive ? "btn-outline active:scale-99  text-txt font-bold  " : "text-txt-sm"}`}>
+                  className={` bg-red-500/    active:scale-99 btn-outline border-none  hover:scale-101  w-full  ${isActive ? " rounded-[17px]   active:scale-99   font-bold  " : "text-txt-sm "} items-center justify-center flex`}>
                   <Icon className={`icon  ${isActive ? 'text-txt' : 'text-txt-sm'}`} />
                   {!collapsed && (
                     <span className={`${isActive ? 'text-txt font-bold': 'text-txt-sm'}`}>{item.title}</span>
                   )}
-                  <div className="flex-1"></div>
+                  {!collapsed && (
+                    <div className="flex-1"></div>
+                  )}
                   <div>
-                    {item.count && (
+                    {item.count && !collapsed && (
                       <button className="btn-sm  rounded-lg btn-outline"> {item.count} </button>
                     )}
                   </div>
@@ -85,7 +87,7 @@ const SideGeneral = ({ collapsed }) => {
       </div>
 
       {/* Tools Section */}
-      {!collapsed ? (<p className="mt-3 mb-2 ml-4 border-t-2 border-t-bg-md pt-3 text-sm font-medium">Tools</p>) : (
+      {!collapsed ? (<p className="mt-3 mb-2 ml-4 border-t-2 border-t-bg-sm/40 pt-3 text-sm font-medium">Tools</p>) : (
         <div className="w-full border-b-2 border-b-bg-sm my-2"></div>
       )}
 

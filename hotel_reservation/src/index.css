@@ -34,14 +34,14 @@
 
 .dark {
   /* Background Layers */
-  --color-bg: #fffaf7;
-  --color-bg-md: #eaeaea;
-  --color-bg-sm: #dddddd;
+  --color-bg: #f5fbff;
+  --color-bg-md: #e0ecf4;
+  --color-bg-sm: #c8d2dd;
 
   /* Text Layers */
-  --color-txt: #0f172a;
-  --color-txt-md: #334155;
-  --color-txt-sm: #64748b;
+  --color-txt: #0c101b;
+  --color-txt-md: #344257;
+  --color-txt-sm: #5e728e;
 
   /* Inverted Colors */
   --color-inv: #0f172a;
@@ -61,21 +61,20 @@
   --color-danger: #ef4444;
   --color-info: #06b6d4;
 }
-
 :root {
   /* Background Layers */
-  --color-bg: #000000;
-  --color-bg-md: #111111;
-  --color-bg-sm: #1b1b1b;
+  --color-bg: #000405;
+  --color-bg-md: #04141c;
+  --color-bg-sm: #142126;
 
   /* Text Layers */
-  --color-txt: #ffffff;
-  --color-txt-md: #cacaca;
-  --color-txt-sm: #a4a4a4;
+  --color-txt: #dce3ec;
+  --color-txt-md: #b3c3c9;
+  --color-txt-sm: #8da1ac;
 
   /* Inverted Colors */
-  --color-inv: #ffffff;
-  --color-inv-sm: #dadada;
+  --color-inv: #ecf5f9;
+  --color-inv-sm: #c9dfe4;
   --color-inv-txt: #0f172a;
 
   /* Accent */
@@ -106,16 +105,16 @@
     @apply font-semibold text-lg text-txt flex items-center gap-2;
   }
   button {
-    @apply cursor-pointer px-4 py-1.5 border-2 border-bg-sm/40  font-medium bg-bg-md text-txt flex items-center gap-2 active:scale-97 transition-all ease-in-out text-txt rounded-2xl hover:scale-102;
+    @apply cursor-pointer px-3 py-[5.5px] text-[13.6px]  border-2 border-bg-sm/40  font-medium bg-bg-md text-txt flex items-center gap-2 active:scale-97 transition-all ease-in-out text-txt rounded-2xl hover:scale-102;
   }
   p {
     @apply  text-txt-sm
   }
   input {
-    @apply bg-bg-md ring-0 text-txt-sm py-2 border-2 border-bg-sm/50 px-4 rounded-2xl
+    @apply bg-bg-md/80  ring-0 focus:outline-none focus:ring-0 py-[6px] text-[14.4px]  font-semibold text-txt-sm/80   border-2 border-bg-sm/60  px-4 rounded-2xl
   }
   span {
-    @apply text-txt text-[15px]
+    @apply text-txt text-[14.9px]
   }
   
 }
@@ -140,7 +139,7 @@
     @apply size-5 text-txt 
   }
   .icon-sm {
-    @apply size-3.5
+    @apply size-4
   }
   .card-col-c {
     @apply flex flex-col border-2 border-bg-md p-7 rounded-3xl items-center justify-center gap-3 
@@ -151,8 +150,8 @@
   .inv {
     @apply bg-inv border-none text-inv-txt
   }
-  .warning {
-    @apply bg-red-500 text-white
+  .btn-warning {
+    @apply bg-red-100  text-red-400 border-red-200/50 
   }
   .btn-outline {
     @apply bg-transparent border-2 border-bg-sm/70

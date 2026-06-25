@@ -6,7 +6,7 @@ const SideProfile = ({collapsed}) => {
   return (
     <div className="w-full  h-fit p-3 flex items-center gap-2 justify-between">
       <div className="flex items-center gap-2">
-        <div className="flex items-center justify-center size-11 rounded-full bg-bg-sm ">
+        <div className="flex items-center justify-center size-11 rounded-full bg-bg-md ">
           <User className="icon"/>
         </div>
 

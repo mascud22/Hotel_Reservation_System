@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`border-r-3 border-r-bg-md h-212 flex flex-col bg-bg-md/40 transition-all duration-300
+      className={`border hidden sm:flex md:flex lg:flex   border-r-bg-sm/50  h-212 flex flex-col bg-bg-md/40 transition-all duration-300
       ${collapsed ? "w-25 " : "w-76"}`}
     >
       <SideHeader collapsed={collapsed} toggleSidebar={toggleSidebar} />
