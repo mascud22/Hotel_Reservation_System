@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Mastodon, Menu, X } from "iconoir-react";
+import { useEffect, useState } from "react";
+import { ArrowLeft, ArrowRight, Mastodon, Menu, X } from "iconoir-react";
 import { NavLink } from "react-router-dom";
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, MoonIcon, XIcon } from "lucide-react";
 
 const Navbar = () =>  {
   const [open, setOpen] = useState(false);
@@ -25,6 +25,26 @@ const navItems = [
 
   }
 ]
+
+const [dark, setDark] = useState(false);
+
+useEffect(() => {
+  const saved = localStorage.getItem("theme")
+  if(saved === "dark"){
+    setDark(true)
+  }
+}, []);
+
+useEffect(() => {
+  if(dark){
+    document.documentElement.classList.add("dark")
+    localStorage.setItem("theme", "dark")
+  }
+  else {
+    document.documentElement.classList.remove("dark")
+    localStorage.setItem("theme", "light")
+  }
+}, [dark]);
 
   return (
     <header className="sticky w-full  top-0 z-50 border-b-2/ mt-3 border-bg-sm/30  backdrop-blur-xl bg-bg/90">
@@ -61,6 +81,7 @@ const navItems = [
         <div className="hidden md:flex items-center gap-3">
           <button className="btn-inv">Login</button>
           <button className=""> Register</button>
+          <button onClick={() => setDark(!dark)} className="btn-inv px-2 ">   <MoonIcon className="icon text-inv-txt"/></button>
         </div>
 
         {/* Mobile Menu Button */}

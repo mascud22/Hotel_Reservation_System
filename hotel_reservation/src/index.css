@@ -32,7 +32,7 @@
   --color-info: #06b6d4;
 }
 
-.light {
+:root {
   /* Background Layers */
   --color-bg: #f5fbff;
   --color-bg-md: #e0ecf4;
@@ -61,7 +61,7 @@
   --color-danger: #ef4444;
   --color-info: #06b6d4;
 }
-:root {
+.dark {
   /* Background Layers */
   --color-bg: #000405;
   --color-bg-md: #04141c;
@@ -165,4 +165,21 @@
   .btn-inv {
     @apply bg-inv border-none text-inv-txt 
   }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 25s linear infinite;
+
+}
+
+.marquee:hover {
+  animation-play-state: paused;
 }

@@ -4,6 +4,7 @@ import {
   StarSolid,
   User,
 } from "iconoir-react";
+import Line from "./Line";
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
               <BedReady className="icon-sm" />
               Trusted by 10,000+ Happy Travelers
             </button>
-            <h1 className="mt-8 text-5xl font-semibold md:text-6xl lg:text-7xl font-bold leading-tight text-center">
+            <h1 className="mt-8 text-5xl font-semibold md:text-6xl lg:text-7xl font-bold leading-tight text-center ">
                 Luxury Stays Made and <br />  gets its done for 
             </h1>
 
@@ -28,12 +29,12 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-4 mt-10">
 
-              <button className="btn-acc btn-lg">
+              <button className="btn-acc btn-lg animate-bounce group transition-all ease-in-out ">
                 Reserve Now
-                <ArrowRight className="icon-sm" />
+                <ArrowRight className="icon-sm group-hover:ml-3 transition-all ease-in-out group-hover:animate-ping group-hover:size-3" />
               </button>
 
-              <button className="btn-outline btn-lg">
+              <button className="btn-outline btn-lg animate-pulse">
                 Explore Rooms
               </button>
 
@@ -41,7 +42,8 @@ export default function Hero() {
 
             {/* Stats */}
 
-            <div className="grid grid-cols-3 gap-5 mt-16">
+            <Line/>
+            <div className="grid grid-cols-3 gap-5 mt-16 ">
               <div className="card-col-c">
                 <h2>150+</h2>
                 <p>Luxury Rooms</p>
@@ -57,6 +59,7 @@ export default function Hero() {
                 <p>Guest Rating</p>
               </div>
             </div>
+
 
           </div>
 
@@ -103,7 +106,7 @@ export default function Hero() {
 
             {/* Price Card */}
 
-            <div className="absolute bottom-8 -right-8 bg-bg border-2 border-bg-sm rounded-3xl p-6  w-72">
+            <div className="absolute bottom-8 right-11 bg-bg border-2 border-bg-sm rounded-3xl p-6  w-72">
 
               <span className="text-yellow-500 font-semibold">
                 ★ Premium Suite

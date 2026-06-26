@@ -3,6 +3,7 @@ import Hero from '../../components/landing page com/Hero'
 import RoomCategories from '../../components/landing page com/RoomCategories'
 import HowItWorks from '../../components/landing page com/HowItWorks.jsx'
 import WhyChooseUs from '../../components/landing page com/WhyChooseUs.jsx'
+import Line from '../../components/landing page com/Line.jsx'
 
 const Home = () => {
   return (
