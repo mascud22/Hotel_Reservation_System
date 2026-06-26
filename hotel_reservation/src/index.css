@@ -32,7 +32,7 @@
   --color-info: #06b6d4;
 }
 
-.dark {
+.light {
   /* Background Layers */
   --color-bg: #f5fbff;
   --color-bg-md: #e0ecf4;
@@ -49,8 +49,8 @@
   --color-inv-txt: #ffffff;
 
   /* Accent */
-  --color-acc: #3b96f6;
-  --color-acc-txt: #dbeefe;
+  --color-acc: #c3f369;
+  --color-acc-txt: #1b6454;
 
   /* Border */
   --color-border: #e2e8f0;
@@ -104,8 +104,11 @@
   h4 {
     @apply font-semibold text-lg text-txt flex items-center gap-2;
   }
+  h5 {
+    @apply font-semibold  text-txt flex items-center gap-2;
+  }
   button {
-    @apply cursor-pointer px-3 py-[5.5px] text-[13.6px]  border-2 border-bg-sm/40  font-medium bg-bg-md text-txt flex items-center gap-2 active:scale-97 transition-all ease-in-out text-txt rounded-2xl hover:scale-102;
+    @apply cursor-pointer px-4  py-[5.5px] text-[13.6px]  border-2 border-bg-sm/40  font-medium bg-bg-md text-txt flex items-center gap-2 active:scale-97 transition-all ease-in-out text-txt rounded-2xl hover:scale-102;
   }
   p {
     @apply  text-txt-sm
@@ -121,7 +124,7 @@
 
 @layer components {
   .btn-lg {
-    @apply px-4.5 rounded-[22px] py-2 text-lg ;
+    @apply px-4.5 rounded-[22px] py-2 text-[15px] ;
   }
   .btn {
     @apply px-3 py-1.5 ;
@@ -151,9 +154,15 @@
     @apply bg-inv border-none text-inv-txt
   }
   .btn-warning {
-    @apply bg-red-100  text-red-400 border-red-200/50 
+    @apply bg-danger  text-white border-none 
+  }
+  .btn-success {
+    @apply bg-green-200  text-green-700 border-none
   }
   .btn-outline {
     @apply bg-transparent border-2 border-bg-sm/70
+  }
+  .btn-inv {
+    @apply bg-inv border-none text-inv-txt 
   }
 }

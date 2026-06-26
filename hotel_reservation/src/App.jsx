@@ -10,6 +10,8 @@ import Payment from './pages/payments/Payment'
 import Reservation from './pages/reservations/Reservation'
 import Customers from './pages/customers/Customers'
 import Dashboard from './pages/dashboard/Dashboard'
+import LandingPageLayout from './layouts/LandingPageLayout'
+import Home from './pages/landing page/Home'
 
 const App = () => {
   return (
@@ -27,8 +29,12 @@ const App = () => {
             <Route path='/customers' element={<Customers/>}/>
             <Route path='/payments' element={<Payment/>}/>
             <Route path='/reservations' element={<Reservation/>}/>
-            <Route path='/' element={<Dashboard/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
           </Route>
+        </Route>
+        {/* and here is the landing page of our app  */}
+        <Route element={<LandingPageLayout/>}>
+            <Route path='/' element={<Home/>}/>
         </Route>
       </Routes>
   )
