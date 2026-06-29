@@ -12,6 +12,8 @@ import Customers from './pages/customers/Customers'
 import Dashboard from './pages/dashboard/Dashboard'
 import LandingPageLayout from './layouts/LandingPageLayout'
 import Home from './pages/landing page/Home'
+import LandingAuthLayout from './layouts/LandingAuthLayout'
+import LandingRegister from './components/landing page com/LandingRegister'
 
 const App = () => {
   return (
@@ -31,6 +33,10 @@ const App = () => {
             <Route path='/reservations' element={<Reservation/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
           </Route>
+        </Route>
+        {/* here is we show landing page auth  */}
+        <Route element={<LandingAuthLayout/>} >
+          {/* <Route path='/customer/register' element={<LandingRegister/>}/> */}
         </Route>
         {/* and here is the landing page of our app  */}
         <Route element={<LandingPageLayout/>}>

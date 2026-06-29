@@ -6,11 +6,12 @@ const Input = ({
   rightIcon,
   rightIcon2,
   placeHolder,
+  className,
   type,
   ...props
 }) => {
   return (
-    <div className="relative w-fit">
+    <div className="relative w-full">
       {/* Left Icons */}
       <div className="absolute left-3 top-1/2 flex -translate-y-1/2 items-center gap-2">
         {leftIcon}
@@ -27,7 +28,7 @@ const Input = ({
         type={type}
         {...props}
         placeholder={placeHolder}
-        className="pl-10 pr-11 w-full"
+        className={`pl-10 pr-11 w-full  ${className}`}
       />
     </div>
   );

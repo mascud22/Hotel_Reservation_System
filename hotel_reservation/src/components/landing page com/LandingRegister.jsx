@@ -8,8 +8,7 @@ import {
   EyeClosed,
 } from "iconoir-react";
 import { useState } from "react";
-import Input from "../../components/Ui/Input";
-import { IndentIcon } from "lucide-react";
+import Input from "../Ui/Input";
 
 export default function LandingRegister() {
   const [showPassword, setShowPassword] = useState(false);
@@ -43,7 +42,7 @@ export default function LandingRegister() {
         Create your account
       </span>
 
-      <h1 className="mt-4 text-center">
+      <h1 className="mt-4">
         Join Our Hotel Platform
       </h1>
 
@@ -55,14 +54,13 @@ export default function LandingRegister() {
 
     <form className="space-y-5">
 
-      <div className="flex flex-col gap-2 w-full ">
-        <span className="ml-2 font-semibold">Full Name</span>
+      <div>
+        <span>Full Name</span>
 
-        <Input
+        <input
           type="text"
-          placeHolder="John Doe"
-          leftIcon={<IndentIcon className="icon sm:"/>}
-          className="input-lg w-full "
+          placeholder="John Doe"
+          className="w-full mt-2 input-lg"
         />
       </div>
 

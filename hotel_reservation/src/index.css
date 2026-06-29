@@ -117,7 +117,7 @@
     @apply bg-bg-md/80  ring-0 focus:outline-none focus:ring-0 py-[6px] text-[14.4px]  font-semibold text-txt-sm/80   border-2 border-bg-sm/60  px-4 rounded-2xl
   }
   span {
-    @apply text-txt text-[14.9px]
+    @apply text-txt text-[14.9px] font-medium 
   }
   
 }
@@ -126,17 +126,20 @@
   .btn-lg {
     @apply px-4.5 rounded-[22px] py-2 text-[15px] ;
   }
+  .input-lg {
+    @apply py-2.5 rounded-[19px]   w-full   text-[15px]  
+  }
   .btn {
     @apply px-3 py-1.5 ;
   }
   .btn-icon {
-    @apply flex items-center text-sm rounded-xl  justify-center size-9 border-2 border-bg-md ;
+    @apply flex items-center text-sm rounded-xl  justify-center p-1.5 rounded-full  border-2 border-bg-md ;
   }
   .btn-sm {
     @apply px-2 py-0.5 text-sm ;
   } 
   .icon-lg {
-    @apply size-5
+    @apply size-5 
   }
   .icon {
     @apply size-5 text-txt 

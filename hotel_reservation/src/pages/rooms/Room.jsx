@@ -1,10 +1,37 @@
 import React, { useState } from 'react'
-import { ArrowLeft, Bathroom, BathroomSolid, Filter, FilterAlt, FilterList, FrameSimple, Medal1st, OrganicFood, Plus, Search, SingleTapGesture, Slash, Sort, TwoPointsCircle, Unjoin3d, User, ViewColumns2, ViewColumns3, X } from 'iconoir-react';
+import { ArrowLeft, Bathroom, BathroomSolid, Filter, FilterAlt, FilterList, FrameSimple, Medal1st, OrganicFood, Plus, Search, SingleTapGesture, Slash, Sort, Trash, TwoPointsCircle, Unjoin3d, User, ViewColumns2, ViewColumns3, X } from 'iconoir-react';
 import { ChevronDown, DoorOpen, XIcon } from 'lucide-react';
 import Input from '../../components/Ui/Input';
 const Room = () => {
   const [filterModal, setFilterModal] = useState(false);
   const [capacityModal, setCapacityModal] = useState(false);
+
+  const rooms = [
+  {
+    roomType: "Deluxe",
+    price: 120,
+    source: "Google",
+    status: "Available",
+    beds: 2,
+    view: "Sea View",
+  },
+  {
+    roomType: "Standard",
+    price: 80,
+    source: "Booking",
+    status: "Occupied",
+    beds: 1,
+    view: "City View",
+  },
+  {
+    roomType: "Suite",
+    price: 200,
+    source: "Airbnb",
+    status: "Available",
+    beds: 3,
+    view: "Ocean View",
+  },
+];
   return (
     <div className='w-full h-full flex flex-col gap-3 p-5 '>
       <div className=' gap-3  w-full flex  items-center   bg-red-200/   h-10 bg-bg-md/ border-b-2/ p-3    border-b-bg-sm  px-2  '>
@@ -81,39 +108,39 @@ const Room = () => {
          </button>
       </div>
       {/* now we create the main rooms ui here  */}
-      <div className='w-full h-full mt-4   rounded-2xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4  grid-rows-2 gap-3'>
-        <div className='bg-bg-md rounded-3xl flex flex-col gap-2 p-3'>
-          {/* here we create first a header fo the cards of rooms  */}
-          <div className='flex items-center justify-between border-b-2 border-b-bg-sm/30  pb-2'>
-            <div className='flex items-center   gap-2 '>
-              <DoorOpen strokeWidth={1} className='icon  '/>
-              <div className='flex flex-col'>
-                <h5 className='font-medium '>Single</h5>
-              </div>
-            </div>
-            <button className='w-fit rounded-lg  btn-sm '>1 Person</button>
-          </div>
-            {/* we create here an image of rooms  */}
-            <div className='w-full aspect-square    rounded-sm bg-bg-sm/50 flex items-center justify-center'>
-              <User/>
-            </div>
-            <div className='w-full px-1'>
-              <h5 className='text-danger '>105.6</h5>
-            </div>
-        </div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-        <div className='bg-bg-md rounded-3xl '></div>
-      </div>
+       <div className='w-full p-3 '>
+      <table className='table-auto  w-full'>
+        <thead className=' text-left  border-b-2 border-b-bg-sm text-txt  '>
+          <tr className=''>
+            <th className='py-3'>Room Type</th>
+            <th>Price</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Beds</th>
+            <th>View</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {rooms.map((room, index) => (
+            <tr className='border-b-2 border-b-bg-md text-txt-sm' key={index}>
+              <td className='py-3 '>{room.roomType}</td>
+              <td>
+                <button className='btn-icon btn-success  '> <Trash className='icon-sm '/>  </button>
+              </td>
+              <td>{room.source}</td>
+              <td>{room.status}</td>
+              <td>
+                <button className='btn-sm'>{room.beds}</button>
+              </td>
+              <td>
+                <button className='btn-sm'>{room.view}</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     </div>
   )
 }

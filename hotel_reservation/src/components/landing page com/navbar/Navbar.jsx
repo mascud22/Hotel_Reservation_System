@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Mastodon, Menu, X } from "iconoir-react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { MenuIcon, MoonIcon, XIcon } from "lucide-react";
 
 const Navbar = () =>  {
@@ -9,7 +9,7 @@ const Navbar = () =>  {
 const navItems = [
   {
     title: "Dashboard",
-    path: "/",
+    path: "/dashboard",
   },
   {
     title: "Rooms",
@@ -47,7 +47,7 @@ useEffect(() => {
 }, [dark]);
 
   return (
-    <header className="sticky w-full  top-0 z-50 border-b-2/ mt-3 border-bg-sm/30  backdrop-blur-xl bg-bg/90">
+    <header className="sticky bg-bg-md/ w-full  rounded-2xl   top-0 z-50 border-2/ mt-5 border-bg-sm  backdrop-blur-xl ">
       <div className="max-w-7xl mx-auto h-fit  px-6 flex items-center gap-20 justify-between">
         {/* Logo */}
        <div className="flex items-center">
@@ -79,8 +79,13 @@ useEffect(() => {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <button className="btn-inv">Login</button>
-          <button className=""> Register</button>
+          <Link className="block" to={"/login"}>
+            <button className="btn-inv">Login</button>
+          </Link>
+          <Link className="block" to={"/register"}>
+            <button className=""> Register</button>
+          </Link>
+         
           <button onClick={() => setDark(!dark)} className="btn-inv px-2 ">   <MoonIcon className="icon text-inv-txt"/></button>
         </div>
 
