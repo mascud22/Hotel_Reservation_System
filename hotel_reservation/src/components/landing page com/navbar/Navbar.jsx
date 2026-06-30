@@ -83,7 +83,7 @@ useEffect(() => {
             <button className="btn-inv">Log In</button>
           </Link>
           <Link className="block" to={"/register"}>
-            <button className=""> Register</button>
+            <button className=""> Register now</button>
           </Link>
          
           <button onClick={() => setDark(!dark)} className="btn-inv px-2 ">   <MoonIcon className="icon text-inv-txt"/></button>
