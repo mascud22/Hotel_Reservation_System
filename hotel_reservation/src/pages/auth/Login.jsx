@@ -90,7 +90,7 @@ export default function Login() {
         type="submit"
         className="btn-lg btn-acc w-full justify-center mt-2"
       >
-        Login
+        Log in
 
         <ArrowRight className="icon-sm" />
       </button>
