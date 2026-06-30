@@ -80,7 +80,7 @@ useEffect(() => {
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-3">
           <Link className="block" to={"/login"}>
-            <button className="btn-inv">Login</button>
+            <button className="btn-inv">Log In</button>
           </Link>
           <Link className="block" to={"/register"}>
             <button className=""> Register</button>
